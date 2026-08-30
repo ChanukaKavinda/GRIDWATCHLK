@@ -1,5 +1,6 @@
 const express = require('express');
 const authRoutes = require('./auth.routes');
+const reportRoutes = require('./report.routes'); 
 
 const router = express.Router();
 
@@ -8,6 +9,7 @@ router.get('/health', (req, res) => {
 });
 
 router.use('/auth', authRoutes);
-router.use('/', authRoutes);   // /me සහ /auth/me දෙකම වැඩ කරන්න
+router.use('/', authRoutes);  
+router.use('/reports', reportRoutes); 
 
 module.exports = router;
